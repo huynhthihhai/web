@@ -1,0 +1,352 @@
+.care-container {
+    padding: 20px 40px;
+    color: white;
+}
+
+.hero-section-care {
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-radius: 48px;
+    padding: 60px 40px;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.hero-icon-care {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.hero-section-care h1 {
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.hero-section-care p {
+    font-size: 20px;
+    font-weight: 500;
+    opacity: 0.95;
+    line-height: 1.5;
+}
+
+
+.stats-grid-care {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.stat-card-care {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 28px;
+    padding: 32px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.stat-card-care:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number-care {
+    font-size: 56px;
+    font-weight: 900;
+    color: #10b981;
+    margin-bottom: 12px;
+}
+
+.stat-label-care {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ddd;
+    letter-spacing: 0.5px;
+}
+
+
+.section-title-care {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-title-care h2 {
+    font-size: 44px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #10b981;
+    letter-spacing: 1px;
+}
+
+.section-title-care p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.policy-section-care {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 48px;
+    padding: 48px;
+    margin-bottom: 60px;
+}
+
+.policy-section-care h3 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 28px;
+    color: #10b981;
+}
+
+.policy-section-care h3 i {
+    margin-right: 12px;
+}
+
+.policy-list-care {
+    list-style: none;
+}
+
+.policy-list-care li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.policy-list-care li i {
+    color: #10b981;
+    font-size: 24px;
+}
+
+.policy-list-care li strong {
+    min-width: 180px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.policy-list-care li span {
+    color: #ccc;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.care-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+    margin-bottom: 60px;
+}
+
+.care-feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 28px;
+    padding: 32px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.care-feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.care-feature-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.care-feature-card h3 {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #10b981;
+}
+
+.care-feature-card p {
+    color: #ddd;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.contact-section-care {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 48px;
+    padding: 48px;
+    margin-bottom: 48px;
+}
+
+.contact-info-care h3,
+.contact-form-care h3 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 28px;
+    color: #10b981;
+}
+
+.contact-item-care {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+}
+
+.contact-item-care i {
+    font-size: 28px;
+    color: #10b981;
+    margin-top: 4px;
+}
+
+.contact-item-care strong {
+    display: block;
+    margin-bottom: 6px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.contact-item-care p {
+    color: #ccc;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.contact-form-care input,
+.contact-form-care textarea {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    transition: all 0.2s;
+}
+
+.contact-form-care input:focus,
+.contact-form-care textarea:focus {
+    outline: none;
+    border-color: #10b981;
+}
+
+.contact-form-care input::placeholder,
+.contact-form-care textarea::placeholder {
+    color: #888;
+    font-size: 15px;
+}
+
+.submit-btn-care {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    padding: 16px 28px;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.submit-btn-care:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+
+@media (max-width: 768px) {
+    .care-container {
+        padding: 20px;
+    }
+
+    .hero-section-care h1 {
+        font-size: 38px;
+    }
+
+    .hero-section-care p {
+        font-size: 16px;
+    }
+
+    .section-title-care h2 {
+        font-size: 32px;
+    }
+
+    .stat-number-care {
+        font-size: 42px;
+    }
+
+    .stat-label-care {
+        font-size: 15px;
+    }
+
+    .contact-section-care {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px;
+    }
+
+    .policy-list-care li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .policy-list-care li strong {
+        min-width: auto;
+    }
+
+    .contact-info-care h3,
+    .contact-form-care h3 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section-care {
+        padding: 40px 20px;
+    }
+
+    .hero-section-care h1 {
+        font-size: 28px;
+    }
+
+    .section-title-care h2 {
+        font-size: 26px;
+    }
+
+    .contact-section-care {
+        padding: 24px;
+    }
+
+    .policy-section-care {
+        padding: 24px;
+    }
+
+    .care-feature-card h3 {
+        font-size: 22px;
+    }
+}

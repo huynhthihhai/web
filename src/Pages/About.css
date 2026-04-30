@@ -1,0 +1,246 @@
+.about-page {
+    padding: 20px 40px;
+    color: white;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #0f2027 100%);
+    border-radius: 48px;
+    padding: 50px 40px;
+    text-align: center;
+    margin-bottom: 48px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hero-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.hero-section h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #facc15;
+}
+
+.hero-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.95;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.stat-card {
+    background: rgba(30, 58, 80, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 28px;
+    padding: 32px;
+    text-align: center;
+    transition: transform 0.3s;
+    border: 1px solid rgba(250, 204, 21, 0.3);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 58, 80, 0.8);
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 800;
+    color: #facc15;
+    margin-bottom: 12px;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: #ddd;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+    color: #facc15;
+}
+
+.section-title p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-bottom: 60px;
+}
+
+.feature-card {
+    background: rgba(30, 58, 80, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 28px;
+    padding: 32px;
+    text-align: center;
+    transition: transform 0.3s;
+    border: 1px solid rgba(250, 204, 21, 0.2);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 58, 80, 0.8);
+    border-color: rgba(250, 204, 21, 0.5);
+}
+
+.feature-icon {
+    font-size: 56px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #facc15;
+}
+
+.feature-card p {
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.info-section {
+    margin-bottom: 60px;
+}
+
+.info-content {
+    background: linear-gradient(135deg, #0f2027, #1e3c72);
+    border-radius: 48px;
+    padding: 48px;
+    text-align: center;
+    border: 1px solid rgba(250, 204, 21, 0.3);
+}
+
+.info-text h3 {
+    font-size: 28px;
+    color: #facc15;
+    margin-bottom: 20px;
+}
+
+.info-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ddd;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-section {
+    background: rgba(30, 58, 80, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 48px;
+    padding: 48px;
+    text-align: center;
+    border: 1px solid rgba(250, 204, 21, 0.3);
+}
+
+.contact-section h3 {
+    font-size: 28px;
+    margin-bottom: 24px;
+    color: #facc15;
+}
+
+.contact-info p {
+    margin: 16px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #ddd;
+}
+
+.contact-info i {
+    color: #facc15;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .about-page {
+        padding: 20px;
+    }
+
+    .hero-section {
+        padding: 40px 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 28px;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-content {
+        padding: 32px 20px;
+    }
+
+    .info-text h3 {
+        font-size: 22px;
+    }
+
+    .contact-section {
+        padding: 32px 20px;
+    }
+
+    .contact-info p {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-icon {
+        font-size: 60px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .feature-icon {
+        font-size: 44px;
+    }
+}

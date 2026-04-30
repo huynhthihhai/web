@@ -1,0 +1,195 @@
+
+.footer {
+    background: linear-gradient(180deg, rgba(10, 15, 26, 0.95) 0%, rgba(5, 10, 20, 0.98) 100%);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(251, 191, 36, 0.3);
+    padding: 30px 20px 15px;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+.footer-logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.football-brand {
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@keyframes gentlePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+.football-brand span {
+    background: linear-gradient(135deg, #ffd700, #f59e0b, #10b981, #047857);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    justify-items: start;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-section h4 {
+    color: #facc15;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-link-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 3px 0;
+    text-align: left;
+    width: fit-content;
+}
+
+.footer-link-btn:hover {
+    color: #facc15;
+    transform: translateX(5px);
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: #94a3b8;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 3px 0;
+}
+
+.social-icons a i {
+    font-size: 18px;
+    width: 24px;
+}
+
+.social-icons a:hover {
+    color: #facc15;
+    transform: translateX(5px);
+}
+
+.social-icons a span {
+    font-weight: 500;
+}
+
+.footer-copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright hr {
+    display: none;  
+}
+
+.footer-copyright p {
+    color: #5a6e8a;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 25px 15px 12px;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-items: center;
+        text-align: center;
+    }
+    
+    .footer-section {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-links {
+        align-items: center;
+    }
+    
+    .footer-link-btn {
+        text-align: center;
+    }
+    
+    .social-icons {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 20px 12px 10px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .footer-section h4 {
+        font-size: 16px;
+    }
+    
+    .footer-link-btn {
+        font-size: 14px;
+    }
+}
