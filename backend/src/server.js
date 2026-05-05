@@ -1,4 +1,5 @@
 import express from "express";
+import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import path from "path";
@@ -15,16 +16,15 @@ const app = express();
 
 // --- MIDDLEWARES ---
 
+mongoose.set('strictQuery', true);
+
 // Xử lý dữ liệu JSON từ request body
 app.use(express.json());
 
-// CẤU HÌNH CORS (Sửa lỗi "Không thể kết nối đến máy chủ")
-// Cho phép cả cổng 3000 (React cũ) và 5173 (Vite) truy cập vào API
-app.use(cors({ 
+app.use(cors({
   origin: ["http://localhost:3000", "http://localhost:5173"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
-}));
+}));``
 
 // --- ROUTES ---
 
@@ -33,16 +33,12 @@ app.use("/api/football", footballRoutes);
 
 // Phục vụ các file tĩnh (nếu cần thiết cho việc deploy)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/frontend/dist")));
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-  });
-} else {
-  app.get("/", (req, res) => {
-    res.send("API đang chạy ổn định...");
+    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
   });
 }
-
 // --- KẾT NỐI DB VÀ CHẠY SERVER ---
 
 connectDB().then(() => {
