@@ -49,3 +49,23 @@ export const getTodayMatches = async (req, res) => {
         });
     }
 };
+export const getMatchDetail = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const response = await fetch(
+      `https://v3.football.api-sports.io/fixtures?id=${id}`,
+      {
+        headers: {
+          "x-apisports-key": process.env.FOOTBALL_API_KEY
+        }
+      }
+    );
+
+    const data = await response.json();
+
+    res.json(data.response[0]);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};

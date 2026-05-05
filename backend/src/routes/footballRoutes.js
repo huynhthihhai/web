@@ -3,7 +3,8 @@
 import express from "express";
 import {
     getLiveMatches,
-    getTodayMatches
+    getTodayMatches,
+    getMatchDetail 
 } from "../controllers/footballController.js";
 
 const router = express.Router();
@@ -13,5 +14,9 @@ router.get("/live", getLiveMatches);
 
 // 📅 API: trận hôm nay
 router.get("/today", getTodayMatches);
+
+//Chi tiet tran dau
+router.get("/:id", getMatchDetail);
+
 
 export default router;
