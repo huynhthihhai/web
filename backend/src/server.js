@@ -1,54 +1,69 @@
 import express from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+import path from "path";
 
+import { fileURLToPath } from "url";
+
+// routes
 import authRoute from "./routes/authRoute.js";
 import userRoute from "./routes/userRoute.js";
+import footballRoutes from "./routes/footballRoutes.js";
 
+// middleware
 import { protectedRoute } from "./middlewares/authMiddleware.js";
 
-import cookieParser from "cookie-parser";
-
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import cors from "cors";
-import path from "path";
-import footballRoutes from "./routes/footballRoutes.js";
+// db
 import { connectDB } from "./config/db.js";
 
-// Cấu hình biến môi trường
 dotenv.config();
 
-const PORT = process.env.PORT || 5001;
-const __dirname = path.resolve();
-
 const app = express();
+const PORT = process.env.PORT || 5001;
 
-// --- MIDDLEWARES ---
+// fix __dirname (ESM)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-mongoose.set('strictQuery', true);
+// =====================
+// 🔥 MIDDLEWARE CHUẨN
+// =====================
 
-// Xử lý dữ liệu JSON từ request body
+// CORS (DUY NHẤT 1 LẦN)
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "http://localhost:5173"],
+    credentials: true,
+  })
+);
+
+// parse JSON
 app.use(express.json());
-app.use(cookieParser());
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
-// public routes
+// cookies
+app.use(cookieParser());
+
+// =====================
+// 🔐 PUBLIC ROUTES
+// =====================
 app.use("/api/auth", authRoute);
 
-// private routes
-app.use(protectedRoute);
-app.use("/api/users", userRoute);
+// =====================
+// 🔒 PROTECTED ROUTES
+// =====================
+app.use("/api/users", protectedRoute, userRoute);
 
-app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:5173"],
-  credentials: true
-}));``
-
-// --- ROUTES ---
-
-// Các route chính cho bóng đá (Live, Today, v.v.)
+// =====================
+// ⚽ FOOTBALL ROUTES
+// =====================
+// (tuỳ bạn: có thể để public hoặc protect)
 app.use("/api/football", footballRoutes);
 
-// Phục vụ các file tĩnh (nếu cần thiết cho việc deploy)
+// =====================
+// 📦 STATIC FRONTEND (PRODUCTION)
+// =====================
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
@@ -56,14 +71,18 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
   });
 }
-// --- KẾT NỐI DB VÀ CHẠY SERVER ---
 
-connectDB().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server đang chạy trên cổng: ${PORT}`);
-    console.log(`API Live: http://localhost:${PORT}/api/football/live`);
+// =====================
+// 🚀 START SERVER
+// =====================
+connectDB()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server chạy tại: http://localhost:${PORT}`);
+      console.log(`Football API: http://localhost:${PORT}/api/football/live`);
+    });
+  })
+  .catch((err) => {
+    console.error("❌ DB connection error:", err.message);
+    process.exit(1);
   });
-}).catch((err) => {
-  console.error("Lỗi kết nối cơ sở dữ liệu:", err.message);
-  process.exit(1);
-});
